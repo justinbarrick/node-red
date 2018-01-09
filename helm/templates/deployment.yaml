@@ -29,9 +29,19 @@ spec:
 #            httpGet:
 #              path: /
 #              port: {{ .Values.service.internalPort }}
+          volumeMounts:
+          - name: nfs
+            mountPath: /data
+            subPath: nodered
+
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
     {{- end }}
+
+    volumes:
+    - name: nfs
+      persistentVolumeClaim:
+        claimName: nfs
