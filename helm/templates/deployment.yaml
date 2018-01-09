@@ -41,7 +41,7 @@ spec:
 {{ toYaml .Values.nodeSelector | indent 8 }}
     {{- end }}
 
-    volumes:
-    - name: nfs
-      persistentVolumeClaim:
-        claimName: nfs
+      volumes:
+      - name: nfs
+        persistentVolumeClaim:
+          claimName: nfs
