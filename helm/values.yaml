@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: justinbarrick/nodered
+  repository: justinbarrick/node-red
   tag: latest
   pullPolicy: IfNotPresent
 service:
