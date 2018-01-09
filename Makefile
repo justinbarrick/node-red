@@ -1,5 +1,5 @@
 VERSION=$(shell git rev-list --count HEAD)-$(shell git describe --always --long)
-DEPLOYMENT=stable
+DEPLOYMENT=node-red
 
 .PHONY: build-image
 build-image:
