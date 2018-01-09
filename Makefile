@@ -3,7 +3,7 @@ DEPLOYMENT=node-red
 
 .PHONY: build-image
 build-image:
-	docker build -t justinbarrick/node-red:$(VERSION) -f docker/Dockerfile .
+	docker build -t justinbarrick/node-red:$(VERSION) .
 
 .PHONY: push-image
 push-image:
