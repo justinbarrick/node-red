@@ -11,7 +11,7 @@ push-image:
 
 .PHONY: deploy
 deploy:
-	helm install --set image.tag=$(VERSION) helm
+	helm install --set image.tag=$(VERSION) --name $(DEPLOYMENT) --namespace $(DEPLOYMENT) helm
 
 .PHONY: upgrade-deploy
 upgrade-deploy:

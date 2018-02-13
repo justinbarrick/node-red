@@ -13,9 +13,10 @@ ingress:
   host: nodered.codesink.net
   annotations:
     kubernetes.io/ingress.class: nginx
-  cert: cert-nodered-codesink-net
-nodeSelector:
-  beta.kubernetes.io/arch: amd64
+    external-dns.alpha.kubernetes.io/target: nginx-ingress.codesink.net.
+    ingress.kubernetes.io/auth-tls-verify-client: "on"
+    ingress.kubernetes.io/auth-tls-secret: "node-red/cloudflare"
+  cert: codesink-origin-ca
 resources:
   limits:
     cpu: 0.2

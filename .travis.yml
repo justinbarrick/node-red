@@ -20,7 +20,7 @@ script:
   -in kubeconfig.enc -out kubeconfig -d
 - KUBECONFIG=kubeconfig helm init --client-only
 - make push-image
-- make KUBECONFIG=$(pwd)/kubeconfig upgrade-deploy
+- make KUBECONFIG=$(pwd)/kubeconfig deploy
 notifications:
   slack:
     secure: oxywRNCyUT7/VW3PF8NsPm8jSoGmz0Gq4sQeO3nMo1UjD+u3qwWQ5hxWVRNH6NqRldfoJN0HbtVY33uq5notXoOzk2AoLrLm8Dw1LQERvsN5QyjvXzRkezquj6acZOanM2eXqzpL9EvmLnt6ApETwW+3T9/5UM+wkFjegKWpboL3LsTAyw4Sxhp+vhoF6f9BbIxbnLiVTTjqRc4F8aSWBBSZry1c7YTy4CWTq9IIQAdxV7Batl0fkBzUsYy1L3uvv7xcqBgXiD0lVVj7T9KBUbNFUnDhjN2CjJnmIhl4ht04W81N/1nDVlj+L2yQggOMmUpXqitXML4IF4PIxu3K7Drlw8JL5DtumanJf/9qMaxnZpNsOZnj0s1zU2GVCcEWfMVcUmD6sHJnUbMXNeBBiOLii+F6E2RGAVKgz29329eCrs0NFXQVCL5666sQLdl+YkcKJNmdGqdm6N0K+97STD/Y9CqcS+rkfGL/rtwNgbmHscYpTkN/QKsBxT7L7YZujsdFx9gQru8CgMIm4Pf1A7wfyisdbLcsBlcFqw6V3iT92L7eKfMWuDN1gTm8OBdoxwQlCi1v8BOLw80OKHHqdqEaQg1R38rh39++HtLF5X8J45ClMiz0i4Gz+RDhYgTyV2tycSI099aHb1lT9EAPtRQ5KvkzfUmpoadeVXSz29c=
