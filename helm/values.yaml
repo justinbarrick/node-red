@@ -15,7 +15,7 @@ ingress:
     kubernetes.io/ingress.class: nginx
     external-dns.alpha.kubernetes.io/target: nginx-ingress.codesink.net.
     ingress.kubernetes.io/auth-tls-verify-client: "on"
-    ingress.kubernetes.io/auth-tls-secret: "node-red/cloudflare"
+    ingress.kubernetes.io/auth-tls-secret: "default/cloudflare"
   cert: codesink-origin-ca
 resources:
   limits:
