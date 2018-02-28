@@ -30,10 +30,8 @@ spec:
 #              path: /
 #              port: {{ .Values.service.internalPort }}
           volumeMounts:
-          - name: nfs
+          - name: data
             mountPath: /data
-            subPath: nodered
-
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- if .Values.nodeSelector }}
@@ -42,6 +40,6 @@ spec:
     {{- end }}
 
       volumes:
-      - name: nfs
+      - name: data
         persistentVolumeClaim:
-          claimName: nfs
+          claimName: node-red-{{ .Release.Name }}
